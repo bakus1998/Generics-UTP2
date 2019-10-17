@@ -33,20 +33,19 @@ public class ListCreator <T>{ // Uwaga: klasa musi być sparametrtyzowana
     }
 
 
-
         //mapper zmiana wartosci
     public List mapEvery(Mapper myMap){
-        List<T> mapList = new ArrayList<>();
+        List mapList = new ArrayList<>();
 
         for (int i=0; i<myList.size(); i++){
-            mapList.add((T)myMap.map(myList.get(i)));
+            mapList.add(myMap.map(myList.get(i)));
         }
         return mapList;
     }
 
 
     public static <T> ListCreator<T> collectFrom(List<T> list) {
-        ListCreator<T> myListFromCreator = new ListCreator<>(list);
-        return myListFromCreator;
+        ListCreator<T> creator = new ListCreator<>(list);
+        return creator;
     }
 }

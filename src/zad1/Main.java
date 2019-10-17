@@ -17,13 +17,6 @@ public class Main {
 
     List<String> src2 = Arrays.asList("a", "zzzz", "vvvvvvv" ); //*<-- tu dopisać inicjację elementów listy *//*
     System.out.println(test2(src2));
-
-    //Moje testy
-    List<Double> src3 = Arrays.asList(1.0, 7.2, 2.39, 2.11, 3.12);/*<-- tu dopisać inicjację elementów listy */
-    System.out.println(test3(src3));
-
-    List<Long> src4 = Arrays.asList(2147483649l,31474836472l);
-    System.out.println(test4(src4));
   }
 
 
@@ -46,9 +39,7 @@ public class Main {
           return val+=10;
         }
       };
-
       return ListCreator.collectFrom(src).when(sel).mapEvery(map);
-
     }
 
 
@@ -70,55 +61,6 @@ public class Main {
         return val.length()+10;
       }
     };
-
-    return ListCreator.collectFrom(src).when(sel).mapEvery(map);
-
-  }
-
-  //Moje testy
-  public List<Double> test3(List<Double> src) {
-
-    Selector<Double> sel = new Selector<Double>() {
-      @Override
-      public boolean select(Double val) {
-        if(val>2.4){
-          return true;
-        }else{
-          return false;
-        }
-      }
-    };
-
-    Mapper<Double,Double> map = new Mapper<Double, Double>() {
-      @Override
-      public Double map(Double val) {
-        return val+=10;
-      }
-    };
-
-    return ListCreator.collectFrom(src).when(sel).mapEvery(map);
-  }
-
-  public List<Long> test4(List<Long> src) {
-
-    Selector<Long> sel = new Selector<Long>() {
-      @Override
-      public boolean select(Long val) {
-        if(val>2.4){
-          return true;
-        }else{
-          return false;
-        }
-      }
-    };
-
-    Mapper<Long,Long> map = new Mapper<Long, Long>() {
-      @Override
-      public Long map(Long val) {
-        return val/=2;
-      }
-    };
-
     return ListCreator.collectFrom(src).when(sel).mapEvery(map);
   }
 
