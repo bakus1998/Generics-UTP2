@@ -20,7 +20,7 @@ public class ListCreator <T>{ // Uwaga: klasa musi być sparametrtyzowana
 
 
     //Selector wybiera liczby wg Selectora
-    public ListCreator<T> when(Selector sel) {
+    public ListCreator<T> when(Selector<T> sel) {
         List<T> whenList = new ArrayList<>();
 
         for(int i=0; i<myList.size(); i++) {
@@ -34,9 +34,8 @@ public class ListCreator <T>{ // Uwaga: klasa musi być sparametrtyzowana
 
 
         //mapper zmiana wartosci
-    public List mapEvery(Mapper myMap){
-        List mapList = new ArrayList<>();
-
+    public <S> List <S> mapEvery(Mapper<T,S> myMap){
+        List <S> mapList = new ArrayList<>();
         for (int i=0; i<myList.size(); i++){
             mapList.add(myMap.map(myList.get(i)));
         }
