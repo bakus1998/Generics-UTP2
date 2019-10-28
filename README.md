@@ -1,16 +1,20 @@
-Zadanie: Generics
+# Zadanie: Generics
 
 Stworzyć sparametryzowane interfejsy:
 
-
 Selector - z metodą select, zwracającą true jesli argument spełnia warunek zapisany w metodzoe i false w przeciwnym razie
+
 Mapper - z metodą map, będącą dowolną funkcją: argument -> wynik
+
 oraz  sparametryzowaną klasę ListCreator, zawierającą:
 
 
 statyczną metodę collectFrom (lista)
+
 metodę when
+
 metodę mapEvery
+
 które działają w taki sposób, że symboliczny zapis:
 
     collectFrom(list1).when(selektor).mapEvery(mapper)
@@ -52,10 +56,15 @@ Działanie wyjasnia poniższy przykładowy program (którego plik może być mod
           new Main();
         }
       }
+      
+      
 Gdy w metodzie test1 selektor wybiera z listy liczby < 10, a mapper zwraca liczbę-argument powiększoną o 10, to na konsoli powinniśmy zobaczyć:
+
 [11, 17, 19]
 
+
 Gdy w metodzie test2  selektor wybiera z listy napisy, których długiość jest  większa od 3 znakow, a mapper dzwraca dlugość przekazanego napisu, powiększoną o 10, to na konsoli zobaczymy:
+
 [14, 17]
 
 Należy obowiązkowo zapewnić takie właśnie działanie programu..
